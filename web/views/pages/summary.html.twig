@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+  {# If a title is set, render it. #}
+  {% if title %}
+    <h1>{{ title }}</h1>
+  {% endif %}
+  {# If content is set, render it. #}
+  {% if content %}
+    <h2>{{ content }}</h2>
+    {% if games is defined %}
+        {% for key, game in games %}
+            <p>Name: <a href={{'/game/' ~ key ~ ''}}>{{key}}</a></p>
+            <p>Status: {{ game.getStatus() }} </p>
+            <hr>
+        {% endfor %}
+    {% endif %}
+  {% endif %}
+{% endblock %}

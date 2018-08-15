@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+  {# If a title is set, render it. #}
+  {% if title %}
+    <h1>{{ title }}</h1>
+  {% endif %}
+  {# If content is set, render it. #}
+  {% if content %}
+    <p>{{ content }}</p>
+    {% for message in messages %}
+      <div class="flash-notice">{{ message }}</div>
+      <hr>
+    {% endfor %}
+    {% if gameInfo is defined %}
+        <h3>{{ gameInfo.name }} - Building Health:</h3>
+        {% for building in gameInfo.buildings %}
+            <p>{{building.getName ~ ': '~ building.getHealth ~ ' HP'}}</p>
+        {% endfor %}
+        <form action={{'/game/' ~ gameInfo.name ~ '/attack'}} method="post">
+            <input type="hidden" value="{{gameInfo.name}}" name="gameName">
+            <input type="submit" value="Attack!">
+        </form>
+    {% endif %}
+  {% endif %}
+{% endblock %}

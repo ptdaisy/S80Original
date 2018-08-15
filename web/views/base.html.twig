@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Game</title>
+  </head>
+  <body>
+    <ul>
+      <li><a href="{{ path('home')}}">Home</a></li>
+      <li><a href="{{ path('summary')}}">Your Games</a></li>
+    </ul>
+    {% block main %}
+      <h1>Twig</h1>
+      <p>This is a basic page using Twig.</p>
+    {% endblock %}
+  </body>
+</html>

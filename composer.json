@@ -1,0 +1,26 @@
+{
+    "name": "sport80/test",
+    "authors": [
+        {
+            "name": "David Simon",
+            "email": "david.simon@sport80.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "": "src/",
+            "LIB\\": "libraries/"
+        }
+    },
+    "require": {
+        "symfony/http-foundation": "^4.1",
+        "silex/silex": "~2.0",
+        "twig/twig": "^2.5",
+        "symfony/twig-bridge": "^4.1",
+        "symfony/form": "^4.1"
+    },
+    "require-dev": {
+        "symfony/web-server-bundle": "^4.1",
+        "symfony/var-dumper": "^4.1"
+    }
+}

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+  {# If a title is set, render it. #}
+  {% if title %}
+    <h1>{{ title }}</h1>
+  {% endif %}
+  {# If content is set, render it. #}
+  {% if content %}
+    <p>{{ content }}</p>
+    {% for message in messages %}
+      <div class="flash-notice">{{ message }}</div>
+      <hr>
+    {% endfor %}
+    <form action="/createGame" method="post">
+      <label>City Name</label>
+      <input type="text" name="gameName">
+      <input type="submit" value="start game">
+    </form>
+  {% endif %}
+{% endblock %}
